@@ -3,8 +3,8 @@
     src: url('Fontes/ABSTER.otf') format('opentype');
 }
 
-.corpo{
-    background-color: #8a3636;
+body{
+    background-color: #af3434;
 }
 
 .titulo{
@@ -14,13 +14,6 @@
     justify-content: center;
 }
 
-.cronometro{
-    width: 300px;
-    margin: 100px auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
 
 
-}
 
