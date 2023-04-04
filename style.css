@@ -5,6 +5,7 @@
 
 body{
     background-color: #af3434;
+    transition: color 0.5s ease-in-out 0s;
 }
 
 .titulo{
@@ -12,6 +13,7 @@ body{
     font-size: xx-large;
     display: flex;
     justify-content: center;
+    transition: color 0.5s ease-in-out 0s;
 }
 
 
@@ -62,3 +64,24 @@ body{
 }
 
 /*----------------------------------------------------------------------------------------------*/
+
+
+
+.buttonStart{
+    cursor: pointer;
+    border: none;
+    margin: 0px 700px 0px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    appearance: button;
+    box-shadow: #afafaf -2px 3px 0px;
+    background-color: #ffffff;
+    border: solid transparent;
+    font-weight: bold;
+    border-radius: 20%;
+    display: inline-block;
+    transition: color 0.5s ease-in-out 0s;
+}
+
+
+
