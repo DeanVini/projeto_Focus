@@ -70,8 +70,26 @@ body{
 .buttonStart{
     cursor: pointer;
     border: none;
-    margin: 0px 700px 0px;
+    margin: 10px 700px 0px;
     padding: 10px 12px;
+    border-radius: 4px;
+    appearance: button;
+    box-shadow: #afafaf -2px 3px 0px;
+    background-color: #ffffff;
+    border: solid transparent;
+    font-weight:1000;
+    font-family:Arial, Helvetica, sans-serif;
+    border-radius: 20%;
+    display: inline-block;
+    transition: color 0.5s ease-in-out 0s;
+    
+}
+
+.buttonNext{
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    margin: -150px 830px 13.4px;
     border-radius: 4px;
     appearance: button;
     box-shadow: #afafaf -2px 3px 0px;
@@ -79,9 +97,8 @@ body{
     border: solid transparent;
     font-weight: bold;
     border-radius: 20%;
-    display: inline-block;
     transition: color 0.5s ease-in-out 0s;
+    height: 35px;
+    width: 57px;
 }
-
-
 
