@@ -15,5 +15,50 @@ body{
 }
 
 
+/*CSS do cornometro*/
+
+#time{
+    display: flex;
+    background-color: #ffffff;
+    top: 40px;
+    right: 40px;
+}
 
 
+.baseTimer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.baseTimerItems {
+    width: 200px;
+}
+
+.baseTimerCircle{
+    fill: none;
+    stroke: none;
+}
+
+.baseTimerCirclePath{
+    stroke-width: 6px;
+    stroke: #ad5858;
+}
+
+.timeLabel{
+    position: absolute;
+    width: 200px;
+    height: 500px;
+    
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+
+    font-size:30px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/*----------------------------------------------------------------------------------------------*/
