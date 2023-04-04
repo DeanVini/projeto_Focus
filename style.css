@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'projetoFocus';
+    src: url('Fontes/ABSTER.otf') format('opentype');
+}
+
+.corpo{
+    background-color: #8a3636;
+}
+
+.titulo{
+    font-family:'projetoFocus', ABSTER;
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+}
+
+.cronometro{
+    width: 300px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+
+}
+
