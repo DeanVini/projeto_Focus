@@ -69,16 +69,22 @@ body{
 /*fiz uma tag div para receber os botoes Start e Next,
   com o unico objetivo usar o felxbox e tornar o site
   adaptavel para qualquer resolução*/
-.baseButton{
+
+  .baseButton{
     display: flex;
+    flex-basis: auto;
     justify-content: center;
     gap: 30px;
-    cursor: pointer;
-    
 }
 
+.clickStart{
+    align-items: center;
+}
+
+
+
 .buttonStart{
-    cursor: pointer;
+    cursor: pointer !important; 
     border: none;
     padding: 10px 12px;
     border-radius: 4px;
@@ -94,9 +100,10 @@ body{
     
 }
 
+
+
 .buttonNext{
-    display: inline-block;
-    cursor: pointer;
+    cursor: pointer !important; 
     border: none;
     border-radius: 4px;
     appearance: button;
@@ -108,10 +115,27 @@ body{
     transition: color 0.5s ease-in-out 0s;
     height: 40px;
     width: 60px;
+    display: inline-block;
 }
 
-h1.buttonNext:active, h1.buttonNext:hover{
-    font-size: 150%;
-    background-color: #000000;
+
+.buttonStart:hover{
+    font-size: -50%;
+    background-color: #e6e6e6;
 }
 
+.buttonStart:active{
+    font-size: -50%;
+    background-color: #afafaf;
+}
+
+
+.buttonNext:hover{
+    font-size: -50%;
+    background-color: #e6e6e6;
+}
+
+.buttonNext:active{
+    font-size: -50%;
+    background-color: #afafaf;
+}
