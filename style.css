@@ -66,11 +66,20 @@ body{
 /*----------------------------------------------------------------------------------------------*/
 
 
+/*fiz uma tag div para receber os botoes Start e Next,
+  com o unico objetivo usar o felxbox e tornar o site
+  adaptavel para qualquer resolução*/
+.baseButton{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    cursor: pointer;
+    
+}
 
 .buttonStart{
     cursor: pointer;
     border: none;
-    margin: 10px 700px 0px;
     padding: 10px 12px;
     border-radius: 4px;
     appearance: button;
@@ -89,7 +98,6 @@ body{
     display: inline-block;
     cursor: pointer;
     border: none;
-    margin: -150px 830px 13.4px;
     border-radius: 4px;
     appearance: button;
     box-shadow: #afafaf -2px 3px 0px;
@@ -98,7 +106,12 @@ body{
     font-weight: bold;
     border-radius: 20%;
     transition: color 0.5s ease-in-out 0s;
-    height: 35px;
-    width: 57px;
+    height: 40px;
+    width: 60px;
+}
+
+h1.buttonNext:active, h1.buttonNext:hover{
+    font-size: 150%;
+    background-color: #000000;
 }
 
