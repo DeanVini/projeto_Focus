@@ -19,14 +19,6 @@ body{
 
 /*CSS do cornometro*/
 
-#time{
-    display: flex;
-    background-color: #ffffff;
-    top: 40px;
-    right: 40px;
-}
-
-
 .baseTimer{
     display: flex;
     justify-content: center;
@@ -72,12 +64,10 @@ body{
 .baseButton{
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 30px;
 }
 
-.clickStart{
-    align-items: center;
-}
 
 
 
@@ -98,11 +88,28 @@ body{
     
 }
 
-
-
-.buttonNext{
+.buttonStop{
     cursor: pointer !important; 
     border: none;
+    padding: 10px 17px;
+    border-radius: 4px;
+    appearance: button;
+    box-shadow: #afafaf -2px 3px 0px;
+    background-color: #ffffff;
+    border: solid transparent;
+    font-weight:1000;
+    font-family:Arial, Helvetica, sans-serif;
+    border-radius: 20%;
+    display: inline-block;
+    transition: ease-in-out 0.2s;
+    
+}
+
+
+.buttonNext{ 
+    cursor: pointer !important; 
+    border: none;
+    padding: 0px 10px;
     border-radius: 4px;
     appearance: button;
     box-shadow: #afafaf -2px 3px 0px;
@@ -118,23 +125,19 @@ body{
 }
 
 
-.buttonStart:hover{
+.buttonStart:hover, .buttonNext:hover, .buttonStop:hover{
     font-size: -50%;
     background-color: #e6e6e6;
 }
 
-.buttonStart:active{
+
+.buttonNext:active,.buttonStart:active, .buttonStop:active{
+    transform: scale(90%);
     font-size: -50%;
     background-color: #afafaf;
 }
 
 
-.buttonNext:hover{
-    font-size: -50%;
-    background-color: #e6e6e6;
-}
-
-.buttonNext:active{
-    font-size: -50%;
-    background-color: #afafaf;
+#stopCondition{
+    display: none;
 }

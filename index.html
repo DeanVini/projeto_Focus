@@ -31,7 +31,7 @@
             </svg>
 
             <span class="timeLabel">
-                <h1>0:00</h1> <!--js do cronometro aqui-->
+                <h1 id="timerNumber">25:00</h1> <!--js do cronometro aqui-->
             </span>
 
         </div>
@@ -39,13 +39,14 @@
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
-
     <div>
         <div class="baseButton">
         
-             <div class="clickStart"><button class="buttonStart" role="button">Start</button></div>
+             <div class="clickStart"><button id="startCondition" class="buttonStart" onclick="clickStart()" role="button">START</button></div>
 
-             <div class="clickNext"><iframe class="buttonNext" src="Icons/forward-icon.svg" frameborder="0" role="button"></iframe></div>
+             <div class="clickStart"><button id="stopCondition" class="buttonStop" onclick="clickStop()" role="button">STOP</button></div>
+
+             <div class="clickNext"><img class="buttonNext" src="Icons/forward-icon.svg" frameborder="0" role="button"></img></div>
         
              </div>   
         </div>
