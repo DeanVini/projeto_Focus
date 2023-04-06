@@ -63,9 +63,8 @@ body{
 
 .baseButton{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+    justify-content:center;
+    gap: 30px;
 }
 
 
@@ -109,7 +108,7 @@ body{
 .buttonNext{ 
     cursor: pointer !important; 
     border: none;
-    padding: 0px 10px;
+    padding: 0px 5px;
     border-radius: 4px;
     appearance: button;
     box-shadow: #afafaf -2px 3px 0px;
