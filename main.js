@@ -41,7 +41,7 @@ function timerNumber(){
 
 
 function clickStart(){
-  setInterval(timerNumber, 1000);
+  intervalArm = setInterval(timerNumber, 1000);
 
   let b1 = document.querySelector("#startCondition");
   let b2 = document.querySelector("#stopCondition");
@@ -51,7 +51,7 @@ function clickStart(){
 }
 
 function clickStop(){
-  clearInterval(timerNumber);
+  clearInterval(intervalArm);
 
   let b1 = document.querySelector("#startCondition");
   let b2 = document.querySelector("#stopCondition");

@@ -65,7 +65,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 5px;
 }
 
 
@@ -74,7 +74,7 @@ body{
 .buttonStart{
     cursor: pointer !important; 
     border: none;
-    padding: 10px 12px;
+    padding: 10px 10px;
     border-radius: 4px;
     appearance: button;
     box-shadow: #afafaf -2px 3px 0px;
@@ -91,7 +91,7 @@ body{
 .buttonStop{
     cursor: pointer !important; 
     border: none;
-    padding: 10px 17px;
+    padding: 10px 10px;
     border-radius: 4px;
     appearance: button;
     box-shadow: #afafaf -2px 3px 0px;
@@ -122,6 +122,7 @@ body{
     width: 60px;
     display: inline-block;
     transition: ease-in-out 0.2s;
+    
 }
 
 
