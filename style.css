@@ -54,6 +54,22 @@ body{
     font-family:Arial, Helvetica, sans-serif;
 }
 
+.ActualPath{
+    stroke-width: 6px;
+    stroke-linecap: round;
+    stroke: rgb(0, 198, 50);
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+#pathRemaning{
+    stroke-dasharray: 283 283;
+}
+
+.baseTimerSVG{
+    transform: scaleX(-1);
+}
+
 /*----------------------------------------------------------------------------------------------*/
 
 
@@ -141,3 +157,4 @@ body{
 #stopCondition{
     display: none;
 }
+
