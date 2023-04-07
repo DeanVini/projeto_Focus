@@ -1,4 +1,6 @@
 
+//FUNÇÃO DE CALCULO DO TEMPO DO CRONOMETRO/
+//=======================================================================================================================================================
 function timerNumber(){
   let timeElement = document.querySelector("#timerNumber")
   let reactiveTime = timeElement.innerHTML; //peguei o elemento dentro da h1 no id timerNumber, para que o algoritmo receba sempre a entrada do html
@@ -28,6 +30,7 @@ function timerNumber(){
         timeElement.innerHTML = '0' + minutes + ':' + seconds;
       }
       else{timeElement.innerHTML = minutes + ':' + seconds};  // o elemento que está dentro do h1 no html será minutos : segundos
+      
       console.log("if", minutes, seconds);
     }
     else{
@@ -39,19 +42,20 @@ function timerNumber(){
       console.log("else", minutes, seconds);
     }
   }
-
 }
+//================================================================================================================================
 
-
+/*num está fora para que seu valor não fique interno em uma função
+  e possa ser alterado a cada intervalo de tempo */
 let num = 283;
 let currentNum = num;
 
 function actualPath(path){
-  subVal = 283*0.1/1500;
+  subVal = 283*0.1/1500; //regra de três simples para desobrir o valor proporcional do intervalo (0.1 segundos) com o dasharray
 
   currentNum = currentNum - subVal; // subtrai o valor especificado do num
   path.style.strokeDasharray = currentNum + ' 283' // atualiza o atributo strokeDasharray com o novo valor de num
-  console.log("Tempo atual do Path:", currentNum); // imprime o valor atual de num no console para fins de depuraçã
+  console.log("Tempo atual do Path:", currentNum); // imprime o valor atual de num no console para fins de depuração
 }
 
 
@@ -61,14 +65,14 @@ function clickStart(){
   intervalArm = setInterval(timerNumber, 1000);
   
   intervalPath = setInterval(()=>{
-    actualPath(path);
+    actualPath(path); //a cada 100 milisegundos atualiza o decrementamendo do circulo externo
   }, 100);
 
   let b1 = document.querySelector("#startCondition");
   let b2 = document.querySelector("#stopCondition");
 
-  b1.style.display = 'none';
-  b2.style.display = 'inline-block';
+  b1.style.display = 'none'; //start desaparece 
+  b2.style.display = 'inline-block'; //pause aparece
 }
 
 function clickStop(){
@@ -78,8 +82,8 @@ function clickStop(){
   let b1 = document.querySelector("#startCondition");
   let b2 = document.querySelector("#stopCondition");
 
-  b1.style.display = 'inline-block';
-  b2.style.display = 'none';
+  b1.style.display = 'inline-block'; //start aparece
+  b2.style.display = 'none'; //pause deparece
 }
 
 
