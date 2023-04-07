@@ -5,7 +5,7 @@
 
 body{
     background-color: #af3434;
-    transition: color 0.5s ease-in-out 0s;
+    transition: ease-in-out 0.5s;
 }
 
 .titulo{
@@ -13,7 +13,7 @@ body{
     font-size: xx-large;
     display: flex;
     justify-content: center;
-    transition: color 0.5s ease-in-out 0s;
+    transition: ease-in-out 0.5s;
 }
 
 
@@ -40,6 +40,7 @@ body{
     stroke-width: 6px;
     stroke: #ad5858;
 }
+
 
 .timeLabel{
     position: absolute;

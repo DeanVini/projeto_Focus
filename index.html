@@ -11,22 +11,16 @@
 <body>
 
     <div class="titulo">
-        <h1>FOCUS</h1>
+        <h1 id= "titulo">FOCUS</h1>
     </div>
-
-    <div class="button">
-
 
 
 <!--HTML do cronometro (falta js)-->
-    <div>
-
-    </div>
     <div class="baseTimer">
         <div class="baseTimerItems">
             <svg class="baseTimerSVG" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <g class="baseTimerCircle"> <!-- esse g é uma div para as figuras em SVG-->
-                    <circle class="baseTimerCirclePath" cx="50" cy="50" r="45"/> <!--contorno do cronometro-->
+                    <circle id="basePath" class="baseTimerCirclePath" cx="50" cy="50" r="45"/> <!--contorno do cronometro-->
                     <circle id="pathRemaning" class="ActualPath" cx="50" cy="50" r="45" stroke-dasharray = "283"></circle>
                 </g>
             </svg>
@@ -48,7 +42,7 @@
                 <button id="stopCondition" class="buttonStop" onclick="clickStop()" role="button">PAUSE</button>
             </div>
 
-             <div class="clickNext"><img class="buttonNext" src="Icons/forward-icon.svg" frameborder="0" role="button"></img></div>
+             <div class="clickNext"><img class="buttonNext" src="Icons/forward-icon.svg" frameborder="0" onclick="goToNext()" role="button"></img></div>
         
              </div>   
         </div>

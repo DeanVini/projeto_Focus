@@ -1,5 +1,5 @@
 
-//FUNÇÃO DE CALCULO DO TEMPO DO CRONOMETRO/
+//FUNÇÃO DE CALCULO DO TEMPO DO CRONOMETRO
 //=======================================================================================================================================================
 function timerNumber(){
   let timeElement = document.querySelector("#timerNumber")
@@ -19,6 +19,8 @@ function timerNumber(){
     clearInterval(intervalArm);
     clearInterval(intervalPath);
     reactiveTime = null;
+
+    goToNext();
   }
   else{
 
@@ -35,11 +37,23 @@ function timerNumber(){
     }
     else{
       seconds--;
-      if(seconds < 10){
-        timeElement.innerHTML = minutes + ':' + '0' + seconds;
+      
+      if(seconds < 10 && minutes < 10){
+        timeElement.innerHTML = '0' + minutes + ':' + '0' + seconds;
       }
-      else{timeElement.innerHTML = minutes + ':' + seconds;}
-      console.log("else", minutes, seconds);
+      else{
+        if(seconds < 10){
+          timeElement.innerHTML = minutes + ':' + '0' + seconds;
+        }
+        else{
+          if(minutes < 10){
+            timeElement.innerHTML = '0' + minutes + ':' + seconds;
+          }
+          else{
+            timeElement.innerHTML = minutes + ':' + seconds; 
+          }
+        }
+      }
     }
   }
 }
@@ -49,13 +63,20 @@ function timerNumber(){
   e possa ser alterado a cada intervalo de tempo */
 let num = 283;
 let currentNum = num;
-
 function actualPath(path){
-  subVal = 283*0.1/1500; //regra de três simples para desobrir o valor proporcional do intervalo (0.1 segundos) com o dasharray
+  let firstTime = 0;
 
+  title = document.getElementById("titulo").innerHTML;
+
+  if(title == "FOCUS"){firstTime = 25;}
+  else{firstTime = 5;};
+
+  subVal = 283*0.1/(firstTime*60); //regra de três simples para desobrir o valor proporcional do intervalo (0.1 segundos) com o dasharray
+
+  console.log(subVal);
   currentNum = currentNum - subVal; // subtrai o valor especificado do num
   path.style.strokeDasharray = currentNum + ' 283' // atualiza o atributo strokeDasharray com o novo valor de num
-  console.log("Tempo atual do Path:", currentNum); // imprime o valor atual de num no console para fins de depuração
+   // imprime o valor atual de num no console para fins de depuração
 }
 
 
@@ -76,8 +97,11 @@ function clickStart(){
 }
 
 function clickStop(){
-  clearInterval(intervalArm);
-  clearInterval(intervalPath);
+  timeAt = document.getElementById("timerNumber").innerHTML;
+  if(timeAt != "25:00" || timeAt != "05:00"){
+    clearInterval(intervalArm);
+    clearInterval(intervalPath);
+  }
 
   let b1 = document.querySelector("#startCondition");
   let b2 = document.querySelector("#stopCondition");
@@ -94,3 +118,53 @@ const acColor = {
 };
 
 let coloredPath = acColor.info.color;
+
+
+//Função para ir para o break do pomodoro quando clicar em next ou o tempo acabar;
+/*=========================================================================================================================================================*/
+function goToNext(){
+  tituloElem = document.getElementById("titulo");
+  tituloStr = tituloElem.innerHTML;
+
+  basePathInfos = document.getElementById("basePath");
+
+  timeElem = document.getElementById("timerNumber");
+
+  console.log(tituloStr);
+
+  if(tituloStr == "FOCUS"){
+    if(timeElem.innerHTML != "25:00"){
+      clickStop();
+    }
+
+    tituloElem.innerHTML = "BREAK";
+    document.body.style.backgroundColor = "#1366bf";
+    timeElem.innerHTML = "05:00";
+
+    basePathInfos.style.stroke = "#4f7eaf"
+
+    currentNum = 283
+    let path = document.getElementById("pathRemaning");
+    path.style.strokeDasharray = "283 283"
+
+    clickStart();
+
+  }
+  else{
+    if(timeElem != "05:00"){
+      clickStop();
+    }
+
+    tituloElem.innerHTML = "FOCUS";
+    document.body.style.backgroundColor = "#af3434";
+    timeElem.innerHTML = "25:00";
+
+    basePathInfos.style.stroke = "#ad5858"
+
+    currentNum = 283
+    let path = document.getElementById("pathRemaning");
+    path.style.strokeDasharray = "283 283"
+
+    clickStart();
+  }
+}
