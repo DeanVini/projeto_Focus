@@ -61,8 +61,8 @@ function timerNumber(){
 
 /*num está fora para que seu valor não fique interno em uma função
   e possa ser alterado a cada intervalo de tempo */
-let num = 283;
-let currentNum = num;
+const AREA_BASE = 283;
+let courrentArea = AREA_BASE;
 function actualPath(path){
   let firstTime = 0;
 
@@ -74,8 +74,8 @@ function actualPath(path){
   subVal = 283*0.1/(firstTime*60); //regra de três simples para desobrir o valor proporcional do intervalo (0.1 segundos) com o dasharray
 
   console.log(subVal);
-  currentNum = currentNum - subVal; // subtrai o valor especificado do num
-  path.style.strokeDasharray = currentNum + ' 283' // atualiza o atributo strokeDasharray com o novo valor de num
+  courrentArea = courrentArea - subVal; // subtrai o valor especificado do num
+  path.style.strokeDasharray = courrentArea + ' 283' // atualiza o atributo strokeDasharray com o novo valor de num
    // imprime o valor atual de num no console para fins de depuração
 }
 
@@ -108,6 +108,10 @@ function clickStop(){
 
   b1.style.display = 'inline-block'; //start aparece
   b2.style.display = 'none'; //pause deparece
+
+  actualTime = document.getElementById("timerNumber").innerHTML;
+
+  showPausedTime(actualTime);
 }
 
 
@@ -143,9 +147,9 @@ function goToNext(){
 
     basePathInfos.style.stroke = "#4f7eaf"
 
-    currentNum = 283
+    courrentArea = AREA_BASE
     let path = document.getElementById("pathRemaning");
-    path.style.strokeDasharray = "283 283"
+    path.style.strokeDasharray = `${AREA_BASE} ${AREA_BASE}`;
 
     clickStart();
 
@@ -161,10 +165,21 @@ function goToNext(){
 
     basePathInfos.style.stroke = "#ad5858"
 
-    currentNum = 283
+    courrentArea = AREA_BASE
     let path = document.getElementById("pathRemaning");
-    path.style.strokeDasharray = "283 283"
+    path.style.strokeDasharray = `${AREA_BASE} ${AREA_BASE}`;
 
     clickStart();
   }
+}
+
+function showPausedTime(actualTime){
+  const recElem = document.getElementById("pauseCheck");
+  const newList = document.createElement("li");
+
+  const pauseTime = document.createTextNode(actualTime);
+
+  newList.appendChild(pauseTime);
+
+  recElem.insertBefore(newList, recElem.children[0]);
 }
