@@ -134,6 +134,8 @@ function goToNext(){
 
   timeElem = document.getElementById("timerNumber");
 
+  const PAUSED_TIME_ELEM = document.getElementById("pauseCheck");
+
   console.log(tituloStr);
 
   if(tituloStr == "FOCUS"){
@@ -150,6 +152,7 @@ function goToNext(){
     courrentArea = AREA_BASE
     let path = document.getElementById("pathRemaning");
     path.style.strokeDasharray = `${AREA_BASE} ${AREA_BASE}`;
+    PAUSED_TIME_ELEM.style.backgroundColor = "#4f7eaf"
 
     clickStart();
 
@@ -168,6 +171,7 @@ function goToNext(){
     courrentArea = AREA_BASE
     let path = document.getElementById("pathRemaning");
     path.style.strokeDasharray = `${AREA_BASE} ${AREA_BASE}`;
+    PAUSED_TIME_ELEM.style.backgroundColor = "#ad5858"
 
     clickStart();
   }
@@ -175,7 +179,7 @@ function goToNext(){
 
 function showPausedTime(actualTime){
   const recElem = document.getElementById("pauseCheck");
-  const newList = document.createElement("li");
+  const newList = document.createElement("dt");
 
   const pauseTime = document.createTextNode(actualTime);
 
