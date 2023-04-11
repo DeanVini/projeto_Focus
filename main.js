@@ -1,3 +1,7 @@
+sessionStorage.setItem("focusLog", "[]");
+sessionStorage.setItem("breakLog", "[]");
+
+
 
 //FUNÇÃO DE CALCULO DO TEMPO DO CRONOMETRO
 //=======================================================================================================================================================
@@ -127,6 +131,7 @@ let coloredPath = acColor.info.color;
 //Função para ir para o break do pomodoro quando clicar em next ou o tempo acabar;
 /*=========================================================================================================================================================*/
 function goToNext(){
+
   tituloElem = document.getElementById("titulo");
   tituloStr = tituloElem.innerHTML;
 
@@ -153,6 +158,7 @@ function goToNext(){
     let path = document.getElementById("pathRemaning");
     path.style.strokeDasharray = `${AREA_BASE} ${AREA_BASE}`;
     PAUSED_TIME_ELEM.style.backgroundColor = "#4f7eaf"
+    PAUSED_TIME_ELEM.innerHTML = "";
 
     clickStart();
 
@@ -172,6 +178,7 @@ function goToNext(){
     let path = document.getElementById("pathRemaning");
     path.style.strokeDasharray = `${AREA_BASE} ${AREA_BASE}`;
     PAUSED_TIME_ELEM.style.backgroundColor = "#ad5858"
+    PAUSED_TIME_ELEM.innerHTML = "";
 
     clickStart();
   }
@@ -181,9 +188,43 @@ function showPausedTime(actualTime){
   const recElem = document.getElementById("pauseCheck");
   const newList = document.createElement("dt");
 
-  const pauseTime = document.createTextNode(actualTime);
+  const title = document.getElementById("titulo").innerHTML;
 
-  newList.appendChild(pauseTime);
+  if(title == "FOCUS"){
+    const newArrayTime = JSON.parse(sessionStorage.getItem("focusLog"));
+    newArrayTime.unshift(actualTime);
 
-  recElem.insertBefore(newList, recElem.children[0]);
+
+    sessionStorage.setItem("focusLog", JSON.stringify(newArrayTime));
+
+    let arrLogsFocus = JSON.parse(sessionStorage.getItem("focusLog"));
+
+    recElem.innerHTML= "";
+
+    arrLogsFocus.forEach((log) => {
+      const newListItem = document.createElement("dt");
+      newListItem.textContent = log;
+      newList.appendChild(newListItem);
+      recElem.insertBefore(newList, recElem.children[0]);
+    })
+  }
+  else{
+    const newArrayTime = JSON.parse(sessionStorage.getItem("breakLog"));
+    newArrayTime.unshift(actualTime);
+
+
+    sessionStorage.setItem("breakLog", JSON.stringify(newArrayTime));
+
+    let arrLogsFocus = JSON.parse(sessionStorage.getItem("breakLog"));
+
+    recElem.innerHTML= "";
+
+    arrLogsFocus.forEach((log) => {
+      const newListItem = document.createElement("dt");
+      newListItem.textContent = log;
+      newList.appendChild(newListItem);
+      recElem.insertBefore(newList, recElem.children[0]);
+
+    })
+  }
 }
