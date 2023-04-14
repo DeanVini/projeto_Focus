@@ -224,7 +224,6 @@ function showPausedTime(actualTime){
       newListItem.textContent = log;
       newList.appendChild(newListItem);
       recElem.insertBefore(newList, recElem.children[0]);
-
     })
   }
 }
